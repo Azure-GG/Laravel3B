@@ -2,22 +2,29 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Inventory;
 
-class DatabaseSeeder extends Seeder
+class InventorySeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
-    public function run(): void
+    public function run()
     {
-        // User::factory(10)->create();
+        Inventory::create([
+            'name' => 'Product 1',
+            'quantity' => 10,
+            'price' => 15.99,
+        ]);
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        Inventory::create([
+            'name' => 'Product 2',
+            'quantity' => 20,
+            'price' => 25.50,
+        ]);
+
+        Inventory::create([
+            'name' => 'Product 3',
+            'quantity' => 30,
+            'price' => 10.00,
         ]);
     }
 }
